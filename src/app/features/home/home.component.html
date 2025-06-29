@@ -1,0 +1,19 @@
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" [class.sidebar-toggle]="isSidebarCollapsed()">
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <!-- Main content area -->
+  <main class="content" [class.max-content]="isSidebarCollapsed()">
+
+    <!-- Header -->
+    <app-header (sidebarCollapsed)="onSidebarToggle($event)"></app-header>
+
+    <!-- Page content -->
+    <section class="content-inner">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>

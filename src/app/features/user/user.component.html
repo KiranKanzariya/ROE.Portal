@@ -1,0 +1,3 @@
+@if(user().length > 0){
+    <app-combobox [userList]="user()" (selectedOption)="bindGrid($event)"></app-combobox>
+}

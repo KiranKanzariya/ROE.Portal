@@ -1,0 +1,76 @@
+.title{
+    margin-bottom: 50px;
+}
+
+.mainDiv {
+    height: 100vh;
+    background-color: rgb(238, 238, 238);
+}
+
+.cardDiv {
+    padding: 40px 50px;
+    width: 500px;
+    height: calc(100vh - 180px);
+}
+
+.element-group {
+    position: relative;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.element-label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    color: #222;
+}
+
+.element-input {
+    outline: none;
+    border: none;
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 6px 30px;
+    box-sizing: border-box;
+}
+
+.element-btn {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+input.ng-touched.ng-invalid {
+    border-bottom: 1px solid rgb(220,53,69);
+}
+
+.btnDIv:has(button:disabled) {
+  cursor: not-allowed !important;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#FFF 90%,#0000);
+  background: 
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+  text-align: center;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}

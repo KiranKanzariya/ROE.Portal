@@ -1,0 +1,13 @@
+.nav-bg {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.sidebar-toggle-btn {
+    background-color: transparent;
+    color: var(--text-color);
+    border: none;
+    padding: 8px 10px;
+    cursor: pointer;
+    text-decoration: none;
+}

@@ -1,0 +1,125 @@
+.sidebar {
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	height: 100vh;
+	width: 300px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	transition: all 0.3s ease-in-out;
+	overflow-x: hidden;
+	box-shadow: 2px 0 5px var(--sidebar-shadow);
+}
+
+.sidebar-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	position: relative;
+}
+
+hr {
+	margin-top: 0px;
+}
+
+.sidebar-logo {
+	color: var(--text-color);
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-align: center;
+}
+
+.sidebar-menu {
+	padding-bottom: 1rem;
+}
+
+.sidebar-menu ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.sidebar-menu-item {
+	position: relative;
+}
+
+.sidebar-item {
+	display: flex;
+	align-items: center;
+	color: var(--text-color);
+	text-decoration: none;
+	padding: 0.75rem 1rem;
+	transition: all 0.2s ease;
+	cursor: pointer;
+}
+
+.sidebar-item:hover {
+	background-color: var(--sidebar-menu-hover);
+}
+
+.sidebar-item.menu-item-active {
+	background-color: var(--sidebar-menu-active);
+}
+
+.sidebar-item svg {
+	margin-right: 0.75rem;
+}
+
+.sidebar-item-arrow {
+	margin-left: auto;
+	font-size: 0.8rem;
+	transition: transform 0.3s ease;
+}
+
+.sidebar-item-arrow.rotated {
+	transform: rotate(180deg);
+}
+
+.sidebar-item-text {
+	opacity: 1;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar-item.has-children {
+	position: relative;
+}
+
+.sidebar-submenu {
+	background-color: var(--sidebar-shadow);
+}
+
+.sidebar-submenu .sidebar-item {
+	padding-left: 2rem;
+	font-size: 0.9rem;
+}
+
+.sidebar-collapsed {
+	width: 50px;
+}
+
+.sidebar-collapsed .sidebar-menu-item {
+	position: static;
+}
+
+.sidebar-collapsed .sidebar-item i {
+	margin-right: 0;
+}
+
+.sidebar-collapsed .sidebar-item-text,
+.sidebar-collapsed .sidebar-item-arrow {
+	opacity: 0;
+	width: 0;
+	overflow: hidden;
+}
+
+.sidebar-collapsed .sidebar-submenu {
+	display: none;
+}
+
+.sidebar-item.active{
+    background-color: var(--main-bg);
+	color: var(--bg-color);
+}

@@ -1,0 +1,47 @@
+<div class="sidebar shadow">
+    <div class="sidebar-header">
+        <span class="sidebar-logo">RO Executive</span>
+    </div>
+
+    <hr />
+    
+    <div class="sidebar-menu">
+        <ul>
+            @for (item of menuItems; track $index) {
+            <li class="sidebar-menu-item">
+                <a 
+                    class="sidebar-item" 
+                    role="button"
+                    tabindex="0"
+                    [ngClass]="{
+                        'has-children': item.children,
+                        'menu-item-active': item.isOpen
+                    }"
+                    [routerLink]="item.navigateTo"
+                    routerLinkActive="active"
+                    (click)="toggleMenuItem(item)">
+                    <i [class]="item.icon"></i>
+                    <span class="sidebar-item-text">{{ item.label }}</span>
+                    @if(item.children?.length){
+                    <i class="fas fa-chevron-down sidebar-item-arrow" [ngClass]="{ 'rotated': item.isOpen }"></i>
+                    }
+                </a>
+
+                @if(item.children?.length && item.isOpen){
+                <ul class="sidebar-submenu">
+                    @for (child of item.children; track $index) {
+                    <li>
+                        <a class="sidebar-item sidebar-subitem" [routerLink]="child.navigateTo">
+                            <i [class]="child.icon"></i>
+                            <span class="sidebar-item-text">{{ child.label }}</span>
+                        </a>
+                    </li>
+                    }
+                </ul>
+                }
+
+            </li>
+            }
+        </ul>
+    </div>
+</div>
